@@ -4,8 +4,8 @@
 <table>
 <tr>
     <td align="center">
-        <a href="https://github.com/Guichiarotto">
-            <img src="https://avatars.githubusercontent.com/u/110139874?v=4" width="150;" alt="Guichiarotto"/>
+        <a href="https://github.com/FelipeCecato">
+            <img src="https://avatars.githubusercontent.com/u/108101515?v=4" width="150;" alt="FelipeCecato"/>
             <br />
             <sub><b>Guilherme Chiarotto De Moraes</b></sub>
             <br />
