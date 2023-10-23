@@ -7,9 +7,9 @@
         <a href="https://github.com/FelipeCecato">
             <img src="https://avatars.githubusercontent.com/u/108101515?v=4" width="150;" alt="FelipeCecato"/>
             <br />
-            <sub><b>Guilherme Chiarotto De Moraes</b></sub>
+            <sub><b>Felipe Cecato</b></sub>
             <br />
-            <sub>12745229</sub>
+            <sub>12547785</sub>
         </a>
     </td>
     <td align="center">
