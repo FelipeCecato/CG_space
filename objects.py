@@ -61,9 +61,9 @@ class Object:
                                         0.0,      0.0, 0.0, 1.0], np.float32)
         
         self.__mat_translation = np.array([1.0,  0.0, 0.0, t_x, 
-                                         0.0,  1.0, 0.0, t_y, 
-                                         0.0,  0.0, 1.0, t_z, 
-                                         0.0,  0.0, 0.0, 1.0], np.float32)
+                                          0.0,  1.0, 0.0, t_y, 
+                                          0.0,  0.0, 1.0, t_z, 
+                                          0.0,  0.0, 0.0, 1.0], np.float32)
         
         self.__mat_escala = np.array([escala,  0.0, 0.0, 0.0, 
                                     0.0,  escala, 0.0, 0.0, 
@@ -110,7 +110,7 @@ class Object:
         mat_transform = multiplica_matriz(mat_transform,self.__mat_rotation_y)
         mat_transform = multiplica_matriz(mat_transform,self.__mat_rotation_x)
         mat_transform = multiplica_matriz(mat_transform,self.__mat_escala)
-
+        
         return mat_transform
     
     def updateMatriz(self):

@@ -76,6 +76,7 @@ def load_model_from_file(filename):
 
 # ----------- /// -----------
 
+# tecMag = GL_LINEAR ou GL_NEAREST
 def load_texture_from_file(texture_id, img_textura,tecMag):
     """Carrega o arquivo de textura"""
     
