@@ -18,7 +18,7 @@ class Object:
     vertices_list = []
     textures_coord_list = []
 
-    def __init__(self,model_file,texture_file,escala=0.5,d=0,t_x=0,t_y=0,t_z=0):
+    def __init__(self,model_file,texture_file,escala=0.5,d_x=0,d_y=0,d_z=0,t_x=0,t_y=0,t_z=0):
 
         self.model_file = model_file
         self.texture_file = texture_file
@@ -29,30 +29,34 @@ class Object:
         
         self.qtd_texturas+=1
 
-        self.dx=d
-        self.dy=d
-        self.dz=d
+        self.dx=d_x
+        self.dy=d_y
+        self.dz=d_z
         self.tx=t_x
         self.ty=t_y
         self.tz=t_z
         self.escala=escala
 
         # Matrizes de transformação do objeto:
-        cos_d = mt.cos(d)
-        sin_d = mt.sin(d)
+        cos_dx = mt.cos(d_x)
+        sin_dx = mt.sin(d_x)
+        cos_dy = mt.cos(d_y)
+        sin_dy = mt.sin(d_y)
+        cos_dz = mt.cos(d_z)
+        sin_dz = mt.sin(d_z)
         
         self.__mat_rotation_x = np.array([1.0,   0.0,    0.0, 0.0, 
-                                        0.0, cos_d, -sin_d, 0.0, 
-                                        0.0, sin_d,  cos_d, 0.0, 
+                                        0.0, cos_dx, -sin_dx, 0.0, 
+                                        0.0, sin_dx,  cos_dx, 0.0, 
                                         0.0,   0.0,    0.0, 1.0], np.float32)
         
-        self.__mat_rotation_y = np.array([cos_d,  0.0, sin_d, 0.0, 
+        self.__mat_rotation_y = np.array([cos_dy,  0.0, sin_dy, 0.0, 
                                         0.0,    1.0,   0.0, 0.0, 
-                                        -sin_d, 0.0, cos_d, 0.0, 
+                                        -sin_dy, 0.0, cos_dy, 0.0, 
                                         0.0,    0.0,   0.0, 1.0], np.float32)
         
-        self.__mat_rotation_z = np.array([cos_d, -sin_d, 0.0, 0.0, 
-                                        sin_d,  cos_d, 0.0, 0.0, 
+        self.__mat_rotation_z = np.array([cos_dz, -sin_dz, 0.0, 0.0, 
+                                        sin_dz,  cos_dz, 0.0, 0.0, 
                                         0.0,      0.0, 1.0, 0.0, 
                                         0.0,      0.0, 0.0, 1.0], np.float32)
         
