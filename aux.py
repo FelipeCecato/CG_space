@@ -22,6 +22,7 @@ except ImportError:
 from OpenGL.GL import *
 import OpenGL.GL.shaders
 from PIL import Image
+import numpy as np
 # ----------- /// -----------
 
 def load_model_from_file(filename):
@@ -88,5 +89,12 @@ def load_texture_from_file(texture_id, img_textura):
     img_height = img.size[1]
     image_data = img.tobytes("raw", "RGB", 0, -1)
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img_width, img_height, 0, GL_RGB, GL_UNSIGNED_BYTE, image_data)
+
+def multiplica_matriz(a,b):
+    m_a = a.reshape(4,4)
+    m_b = b.reshape(4,4)
+    m_c = np.dot(m_a,m_b)
+    c = m_c.reshape(1,16)
+    return c
 
 # ----------- /// -----------
