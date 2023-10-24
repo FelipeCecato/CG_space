@@ -70,7 +70,7 @@ class Object:
                                     0.0,  0.0, escala, 0.0, 
                                     0.0,  0.0, 0.0, 1.0], np.float32)
 
-    def load(self):
+    def load(self,tecMag=GL_LINEAR):
 
         self.vIni = Object.__vIniAvailable
 
@@ -85,7 +85,7 @@ class Object:
         Object.__vIniAvailable = len(Object.vertices_list)
         self.vCount = len(Object.vertices_list) - self.vIni
 
-        load_texture_from_file(self.ID,self.texture_file)
+        load_texture_from_file(self.ID,self.texture_file,tecMag=tecMag)
 
     def setId(self):
 

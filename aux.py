@@ -76,14 +76,14 @@ def load_model_from_file(filename):
 
 # ----------- /// -----------
 
-def load_texture_from_file(texture_id, img_textura):
+def load_texture_from_file(texture_id, img_textura,tecMag):
     """Carrega o arquivo de textura"""
     
     glBindTexture(GL_TEXTURE_2D, texture_id)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, tecMag)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, tecMag)
     img = Image.open(img_textura)
     img_width = img.size[0]
     img_height = img.size[1]
