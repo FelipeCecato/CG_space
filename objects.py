@@ -68,26 +68,26 @@ class Object:
 
     def load(self):
 
-        self.vIni = self.__vIniAvailable
+        self.vIni = Object.__vIniAvailable
 
         modelo = load_model_from_file(self.model_file)
 
         for face in modelo['faces']:
             for vertice_id in face[0]:
-                self.vertices_list.append( modelo['vertices'][vertice_id-1] )
+                Object.vertices_list.append( modelo['vertices'][vertice_id-1] )
             for texture_id in face[1]:
-                self.textures_coord_list.append( modelo['texture'][texture_id-1] )
+                Object.textures_coord_list.append( modelo['texture'][texture_id-1] )
 
-        self.__vIniAvailable = len(self.vertices_list) + 1
-        self.vCount = len(self.vertices_list) - self.vIni
+        Object.__vIniAvailable = len(Object.vertices_list)
+        self.vCount = len(Object.vertices_list) - self.vIni
 
         load_texture_from_file(self.ID,self.texture_file)
 
     def setId(self):
 
-        self.__idTextureAvailable += 1 # incrementa o Id
+        Object.__idTextureAvailable += 1 # incrementa o Id
 
-        return (self.__idTextureAvailable - 1)
+        return (Object.__idTextureAvailable - 1)
     
     def draw(self):
 
